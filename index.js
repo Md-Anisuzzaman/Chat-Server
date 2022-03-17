@@ -7,12 +7,14 @@ const { Server } = require("socket.io");
 const port =process.env.PORT || 5000;
 app.use(cors());
 
+let site = "http://localhost:3000";
+
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://frozen-atoll-89786.herokuapp.com/",
+    origin: site,
     methods: ["GET", "POST"],
   },
 });
